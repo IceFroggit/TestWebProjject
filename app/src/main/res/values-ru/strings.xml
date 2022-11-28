@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Проект:Тестовое Вебприложение </string>
+    <string name="action_settings">Настройки</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Первый фрагмент</string>
+    <string name="second_fragment_label">Второй фрагмент</string>
+    <string name="next">Сменить экран</string>
+    <string name="previous">Вернуться</string>
+    <string name="hello_first_fragment">Привет это первый Фрагмент</string>
+    <string name="hello_second_fragment">Привет это второй Фрагмент Arg: %1$s</string>
+
+    <string name="title">Форма участника</string>
+    <string name="name">Ваше имя</string>
+    <string name="address">адрес</string>
+    <string name="conditions">с правилами участия ознакомлен и согласен</string>
+    <string name="submit">Потвердить</string>
+
+</resources>
