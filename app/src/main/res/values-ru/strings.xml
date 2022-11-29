@@ -16,4 +16,7 @@
     <string name="conditions">с правилами участия ознакомлен и согласен</string>
     <string name="submit">Потвердить</string>
 
+    <string name="error_fragment_message">Произошла ошибка</string>
+    <string name="dismiss_error">Dismiss error</string>
+
 </resources>

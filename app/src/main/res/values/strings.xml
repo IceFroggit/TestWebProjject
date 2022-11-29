@@ -19,5 +19,9 @@
     <string name="conditions">i have read, understood and accepted membership rules</string>
 
 
+    <!-- Error messages -->
+    <string name="error_fragment_message">An error occurred</string>
+    <string name="dismiss_error">Dismiss</string>
+
 
 </resources>

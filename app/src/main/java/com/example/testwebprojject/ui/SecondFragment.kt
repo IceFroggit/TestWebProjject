@@ -42,7 +42,7 @@ class SecondFragment : Fragment() {
         genderBool = conditionsCheckBox.isChecked
         val maleRadioButton = binding.male
         val femaleRadioButton = binding.female
-        //////////////////////////////////////////////////////
+
         maleRadioButton.setOnClickListener(radioButtonClickListener)
         femaleRadioButton.setOnClickListener(radioButtonClickListener)
         binding.buttonSecond.setOnClickListener {
