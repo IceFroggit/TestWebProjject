@@ -4,6 +4,7 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="third_fragment_label">Third Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -16,7 +17,6 @@
     <string name="address">your address</string>
     <string name="submit">submit</string>
     <string name="conditions">i have read, understood and accepted membership rules</string>
-
 
 
 

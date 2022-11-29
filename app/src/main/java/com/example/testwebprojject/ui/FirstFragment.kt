@@ -1,4 +1,4 @@
-package com.example.testwebprojject
+package com.example.testwebprojject.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +9,8 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.testwebprojject.Catfact
+import com.example.testwebprojject.R
 import com.example.testwebprojject.api.ApiRequest
 import com.example.testwebprojject.databinding.FragmentFirstBinding
 import kotlinx.coroutines.*
@@ -22,12 +24,9 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 @DelicateCoroutinesApi
 class FirstFragment : Fragment() {
-    lateinit var tv_text: TextView
-    lateinit var  progressBar: ProgressBar
+    private lateinit var tvText: TextView
+    private lateinit var  progressBar: ProgressBar
     private var _binding: FragmentFirstBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -42,11 +41,12 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        progressBar = view.findViewById(R.id.progressBar)
-        tv_text = view.findViewById(R.id.textview_first)
+        progressBar = binding.progressBar
+        tvText = binding.textviewFirst
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
         getCurrentData()
     }
 
@@ -60,7 +60,7 @@ class FirstFragment : Fragment() {
      */
 
     private fun getCurrentData(){
-        tv_text.visibility = View.INVISIBLE
+        tvText.visibility = View.INVISIBLE
         progressBar.visibility = View.VISIBLE
         val api:ApiRequest = Retrofit.Builder()
             .baseUrl("https://catfact.ninja")
@@ -71,12 +71,12 @@ class FirstFragment : Fragment() {
         GlobalScope.launch(Dispatchers.IO){
             val response: Response<Catfact> = api.getQuestListItem().awaitResponse()
             if (response.isSuccessful){
-                val data:Catfact = response.body()!!
+                val data: Catfact = response.body()!!
                 Log.d("TAG",data.message)
 
                 withContext(Dispatchers.Main){
-                    tv_text.text = data.message
-                    tv_text.visibility = View.VISIBLE
+                    tvText.text = data.message
+                    tvText.visibility = View.VISIBLE
                     progressBar.visibility = View.GONE
 
                 }
